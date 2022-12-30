@@ -25,7 +25,9 @@ import ws.a.latihanujianjava.exceptions.NonexistentEntityException;
 public class javacontroller {
     A2020ws data = new A2020ws();
     A2020wsJpaController actrl = new A2020wsJpaController();
-    private static Map<String, A2020ws> productRepo = new HashMap<>();
+    
+    
+    //private static Map<String, A2020ws> productRepo = new HashMap<>();
     
     @RequestMapping("/getdata")
     public List<A2020ws> getData(){
@@ -33,10 +35,12 @@ public class javacontroller {
         return actrl.findA2020wsEntities();
     }
     
-    @RequestMapping(value = "/data")
+    /*@RequestMapping(value = "/data")
     public ResponseEntity<Object> getProduct(){
         return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
-    }
+    }*/
+    
+    
     
     @RequestMapping("/getName/{id}")
     public String getName(@PathVariable("id") int id){

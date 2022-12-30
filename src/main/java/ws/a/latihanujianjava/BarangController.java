@@ -38,7 +38,4 @@ public class BarangController {
             return "Data Barang Tidak Ditemukan";     
         }
     }
-
-
-    
 }
