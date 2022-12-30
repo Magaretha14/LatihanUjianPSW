@@ -5,6 +5,7 @@
  */
 package ws.a.latihanujianjava;
 
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,11 @@ public class BarangController {
     Barang data = new Barang();
     BarangJpaController actrl = new BarangJpaController();
     
+    @RequestMapping("/getdatabrg")
+    public List<Barang> getData(){
+        
+        return actrl.findBarangEntities();
+    }
     
     @RequestMapping(value = "/getNamadata/{id}")
     public String getNama(@PathVariable("id") int id){

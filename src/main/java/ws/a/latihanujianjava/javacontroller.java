@@ -6,6 +6,7 @@
 package ws.a.latihanujianjava;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,10 +28,9 @@ public class javacontroller {
     private static Map<String, A2020ws> productRepo = new HashMap<>();
     
     @RequestMapping("/getdata")
-    public String getData(){
-        data = actrl.findA2020ws(data.getId());
+    public List<A2020ws> getData(){
         
-        return data.getName();
+        return actrl.findA2020wsEntities();
     }
     
     @RequestMapping(value = "/data")
